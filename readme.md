@@ -16,7 +16,9 @@
    ```
 5. Once the build is successful, you can run the application with the following command:
    ```
-   ./qualabs -source <path_to_data_directory> -operation <operation_type>
+   ./linux -source <path_to_data_directory> -operation <operation_type>
+   ./mac -source <path_to_data_directory> -operation <operation_type>
+   ./windows.exe -source <path_to_data_directory> -operation <operation_type> 
    ```
-   Replace `<path_to_data_directory>` with the path to your data directory and `<operation_type>` with the operation you want to run (A or B).
+   Replace `<path_to_data_directory>` (it uses ./data by default) with the path to your data directory and `<operation_type>` with the operation you want to run (A or B).
 6. The application will load the data, perform the specified operation, and display the result.
