@@ -25,15 +25,15 @@ type managerUsers struct {
 	ContentModule map[string][]string
 }
 
-// LoadData loads user files fron the path provided
+//LoadData loads user files fron the path provided
 //
-// # Parameters
+//Parameters
 //
-// path: valid path to the user files
+//path: valid path to the user files
 //
-// # Returns
+//Returns
 //
-// ture/false: if the datas were loaded return true, otherwise false
+//ture/false: if the datas were loaded return true, otherwise false
 func (mg *managerUsers) LoadData(path string) bool {
 	var (
 		files = make([]string, 0, 25)
@@ -78,13 +78,13 @@ func (mg *managerUsers) LoadData(path string) bool {
 	return true
 }
 
-// Solution A resolves the qualabs challenge A
+//Solution A resolves the qualabs challenge A
 //
-// # Parameters
+//Parameters
 //
-// # Returns
+//Returns
 //
-// (body, error): body (the solution required), error (if any error took place)
+//(body, error): body (the solution required), error (if any error took place)
 func (mg *managerUsers) SolutionA() ([]byte, error) {
 	mg.feedMaps()
 	response := make(map[string]map[string][]string)
@@ -98,13 +98,13 @@ func (mg *managerUsers) SolutionA() ([]byte, error) {
 	return body, nil
 }
 
-// Solution B resolves the qualabs challenge B
+//Solution B resolves the qualabs challenge B
 //
-// # Parameters
+//Parameters
 //
-// # Returns
+//Returns
 //
-// minGroup: the smallest group formed by users of all modules
+//minGroup: the smallest group formed by users of all modules
 func (mg *managerUsers) SolutionB() []string {
 	var (
 		totalModule = make([]string, 0, 15)
@@ -154,13 +154,13 @@ func (mg *managerUsers) SolutionB() []string {
 	return minGroup
 }
 
-// feedMaps creates maps of two differents modules
+//feedMaps creates maps of two differents modules
 //
-// # Parameters
+//Parameters
 //
-// # Returns
+//Returns
 //
-// void
+//void
 func (mg *managerUsers) feedMaps() {
 	mg.AuthModule = make(map[string][]string)
 	mg.ContentModule = make(map[string][]string)
@@ -170,15 +170,15 @@ func (mg *managerUsers) feedMaps() {
 	}
 }
 
-// checkTotalModules checkes only uninq modules
+//checkTotalModules checkes only uninq modules
 //
-// # Parameters
+//Parameters
 //
-// us: user's array
+//us: user's array
 //
-// # Returns
+//Returns
 //
-// lenthg of the array of uniq modules
+//lenthg of the array of uniq modules
 func (mg *managerUsers) checkTotalModules(us []user) int {
 	totalModule := make([]string, 0, 20)
 	for _, u := range us {
@@ -192,16 +192,16 @@ func (mg *managerUsers) checkTotalModules(us []user) int {
 	return len(totalModule)
 }
 
-// checkModuleInModules checkes module in moduels array
+//checkModuleInModules checkes module in moduels array
 //
-// # Parameters
+//Parameters
 //
-// module: the module to check
-// total: array of uninq modules
+//module: the module to check
+//total: array of uninq modules
 //
-// # Returns
+//Returns
 //
-// (true/false): true (if module is in modules), false otherwise
+//(true/false): true (if module is in modules), false otherwise
 func (mg *managerUsers) checkModuleInModules(module string, total []string) bool {
 	for _, m := range total {
 		if module == m {
